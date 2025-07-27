@@ -1,0 +1,498 @@
+/* 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    background-image: url(../images/bg.jpg);
+    background-repeat: repeat-X;
+    background-size: 1800px auto;
+    background-position: 50% 3%;
+}
+
+
+/* 置頂鍵和錨點沒滾動的關係設的 */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 浮動主選單_監聽(.active配合JS) */
+.menu_pc a.active {
+    color: #1FBDEA;
+}
+
+
+
+/* PC導覽列 */
+.menu_pc {
+    position: fixed;
+    top: 80px;
+    right: 0px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0000006f;
+    backdrop-filter: blur(4px);
+    padding: 16px 20px;
+    border-radius: 12px 0px 0px 12px;
+
+
+
+}
+
+
+
+
+
+.menu_pc li a {
+    font-family: 'Noto Sans TC';
+    font-weight: 400;
+    margin: auto;
+    text-align: center;
+    padding: 12px 2px;
+    margin-bottom: 2px;
+    display: block;
+    white-space: nowrap;
+
+
+}
+
+.menu_pc li a:hover {
+    color: #1FBDEA;
+}
+
+.menu_pc ul {
+    padding-right: 4%;
+    list-style: none;
+}
+
+.menu_pc ul a {
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 0.25px solid #ffffff;
+}
+
+.menu_pc .top a {
+    border-bottom: 0px;
+    font-size: 26px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+
+/* 浮動主選單_手機 */
+.menu_MB {
+    display: none;
+    width: 100%;
+    margin: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 2;
+    position: fixed;
+    bottom: 0px;
+}
+
+
+
+.menu_MB ul {
+    display: flex;
+}
+
+
+.menu_MB ul li a {
+    display: inline-block;
+    width: 90px;
+    margin: 0px 1px;
+    padding: 16px 0px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000000b9;
+    backdrop-filter: blur(4px);
+}
+
+
+
+
+
+
+
+.menu_MB ul li a:hover {
+    color: #D142E1;
+}
+
+
+
+
+
+
+/* 下雨 */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    /* 根據需要可設成更高 */
+}
+
+/* 雨滴樣式 */
+.drop {
+    position: absolute;
+    width: 1px;
+    height: 89px;
+    background: linear-gradient(to bottom, rgba(13, 52, 58, 1), rgba(255, 255, 255, 0.6));
+    animation: fall 0.63s linear infinite;
+    will-change: transform;
+}
+
+/* 下落動畫 */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+
+/* KV */
+.kv {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    margin-top: -2%;
+}
+
+.logo {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 16%;
+}
+
+.kv .kvtop {
+    max-width: 680px;
+    width: 100%;
+
+}
+
+
+.kv .word {
+    max-width: 670px;
+    width: 100%;
+}
+
+.kv .onsale {
+    max-width: 500px;
+    width: 20%;
+    position: absolute;
+    top: 57%;
+    left: 16%;
+    animation: onsale 1s alternate infinite ease-in-out;
+}
+
+
+
+@keyframes onsale {
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+
+/* 購物攻略 */
+.tips,
+.today,
+.box,
+.brand {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 16px;
+    margin-top: 3%;
+}
+
+.title {
+    max-width: 600px;
+    width: 100%;
+}
+
+.tips .one {
+    max-width: 680px;
+    width: 100%;
+}
+
+.tips .list {
+    max-width: 680px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+}
+
+.tips .list li img {
+    width: 100%;
+}
+
+
+
+/* 24H瘋搶 */
+.today .swiperbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+
+.today .swiperbox .swiper {
+    width: 900px;
+
+}
+
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    transform: scale(0.85);
+    transition: all .25s ease-out;
+    transform-origin: center;
+
+}
+
+.swiper-slide-active img {
+    transform: scale(1);
+}
+
+
+/* 高階必BUY顯示卡 */
+.box .list {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 8px;
+    margin: auto;
+
+}
+
+
+.box .list li {
+    background-color: rgba(0, 0, 0, 0.682);
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0px 0px 15px 0px rgba(24, 93, 147, 1);
+    box-sizing: border-box;
+
+}
+
+
+
+.box .list a img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+.box .list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.box .list li h2 {
+    font-size: 16px;
+    font-family: 'Noto Sans TC';
+    font-weight: 600;
+    padding: 8px 0px;
+    background-color: #185e9379;
+    margin: 4px 0px;
+    border-radius: 6px;
+    transition: 0.6s;
+}
+
+.box .list li:hover h2 {
+    background-color: black;
+}
+
+.box .list li h3 {
+    font-family: 'Roboto';
+    font-size: 15px;
+    margin: 6px 0px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    transition: 0.6s;
+    height: 30px;
+}
+
+.box .list li:hover h3 {
+    color: #1FBDEA;
+
+}
+
+.box .list .money {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.box .list .money .price {
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.box .list .money .sale {
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-style: italic;
+    color: #D142E1;
+}
+
+.box .list .money span {
+    font-size: 20px;
+}
+
+/* 人氣品牌 */
+.brand {
+    margin-bottom: 8%;
+}
+
+.brand .list {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: auto;
+}
+
+.brand .list li img {
+    width: 100%;
+    transition: 0.6s;
+
+}
+
+.brand .list li img:hover {
+    transform: translateY(-14px);
+}
+
+/* footer */
+footer p {
+    max-width: 1000px;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 10px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Noto Sans TC';
+
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    /* KV */
+    .logo {
+        width: 26%;
+    }
+
+    .kv {
+        margin-top: -2%;
+    }
+
+
+
+    .kv .onsale {
+        width: 26%;
+        top: 59%;
+        left: 4%;
+
+    }
+
+    /* 24H瘋搶 */
+    .myprev,
+    .mynext {
+        display: none;
+    }
+
+
+
+}
+
+
+@media screen and (max-width:576px) {
+
+    /* 浮動主選單_手機 */
+    .menu_pc {
+        display: none;
+    }
+
+    .menu_MB {
+        display: block;
+    }
+
+
+
+    body {
+        background-size: 1024px auto;
+        background-repeat: repeat-y;
+        background-position: 50% 0%;
+    }
+
+    /* 高階必BUY顯示卡 */
+    .box .list {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    /* 人氣品牌 */
+    .brand .list {
+        max-width: 680px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+
+    .brand .list li img {
+        width: 100%;
+    }
+
+    /* footer */
+    footer {
+        margin-bottom: 10%;
+    }
+
+
+}
