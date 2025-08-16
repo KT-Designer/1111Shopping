@@ -31,14 +31,7 @@ window.addEventListener('scroll', function () {
 
 // PC導覽列_滑入滑出
 $(window).on("scroll", function () {
-    var triggerHeight = 500; // 捲動超過多少 px 才顯示
-    var $menu = $(".menu_pc");
-
-    if ($(this).scrollTop() > triggerHeight) {
-        $menu.addClass("show");
-    } else {
-        $menu.removeClass("show");
-    }
+    $(".menu_pc").toggleClass("show", $(this).scrollTop() > 500); // 捲動超過多少 px 才顯示
 });
 
 
